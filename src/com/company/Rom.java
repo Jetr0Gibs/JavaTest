@@ -1,13 +1,16 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Rom {
-    public int razborStrikiRom (String a, String b, String deistvie) {
+    public String razborStrikiRom (String a, String b, String deistvie) {
         int res = 0;
-
+        String _res = "";
         Map<String,String> dictionary = new HashMap<String,String>();
+        Map<Integer,String> dictionary2 = new HashMap<Integer,String>();
         dictionary.put("I", "1");
         dictionary.put("II", "2");
         dictionary.put("III", "3");
@@ -18,6 +21,198 @@ public class Rom {
         dictionary.put("VIII", "8");
         dictionary.put("IX", "9");
         dictionary.put("X", "10");
+        dictionary.put("XI", "11");
+        dictionary.put("XII", "12");
+        dictionary.put("XIII", "13");
+        dictionary.put("XIV", "14");
+        dictionary.put("XV", "15");
+        dictionary.put("XVI", "16");
+        dictionary.put("XVII", "17");
+        dictionary.put("XVIII", "18");
+        dictionary.put("XIX", "19");
+        dictionary.put("XX", "20");
+        dictionary.put("XXI", "21");
+        dictionary.put("XXII", "22");
+        dictionary.put("XXIII", "23");
+        dictionary.put("XXIV", "24");
+        dictionary.put("XXV", "25");
+        dictionary.put("XXVI", "26");
+        dictionary.put("XXVII", "27");
+        dictionary.put("XXVIII", "28");
+        dictionary.put("XXIX", "29");
+        dictionary.put("XXX", "30");
+        dictionary.put("XXXI", "31");
+        dictionary.put("XXXII", "32");
+        dictionary.put("XXXIII", "33");
+        dictionary.put("XXXIV", "34");
+        dictionary.put("XXXV", "35");
+        dictionary.put("XXXVI", "36");
+        dictionary.put("XXXVII", "37");
+        dictionary.put("XXXVIII", "38");
+        dictionary.put("XXXIX", "39");
+        dictionary.put("XL", "40");
+        dictionary.put("XLI", "41");
+        dictionary.put("XLII", "42");
+        dictionary.put("XLIII", "43");
+        dictionary.put("XLIV", "44");
+        dictionary.put("XLV", "45");
+        dictionary.put("XLVI", "46");
+        dictionary.put("XLVII", "47");
+        dictionary.put("XLVIII", "48");
+        dictionary.put("XLIX", "49");
+        dictionary.put("L", "50");
+        dictionary.put("LI", "51");
+        dictionary.put("LII", "52");
+        dictionary.put("LIII", "53");
+        dictionary.put("LIV", "54");
+        dictionary.put("LV", "55");
+        dictionary.put("LVI", "56");
+        dictionary.put("LVII", "57");
+        dictionary.put("LVIII", "58");
+        dictionary.put("LIX", "59");
+        dictionary.put("LX", "60");
+        dictionary.put("LXI", "61");
+        dictionary.put("LXII", "62");
+        dictionary.put("LXIII", "63");
+        dictionary.put("LXIV", "64");
+        dictionary.put("LXV", "65");
+        dictionary.put("LXVI", "66");
+        dictionary.put("LXVII", "67");
+        dictionary.put("LXVIII", "68");
+        dictionary.put("LXIX", "69");
+        dictionary.put("LXX", "70");
+        dictionary.put("LXXI", "71");
+        dictionary.put("LXXII", "72");
+        dictionary.put("LXXIII", "73");
+        dictionary.put("LXXIV", "74");
+        dictionary.put("LXXV", "75");
+        dictionary.put("LXXVI", "76");
+        dictionary.put("LXXVII", "77");
+        dictionary.put("LXXVIII", "78");
+        dictionary.put("LXXIX", "79");
+        dictionary.put("LXXX", "80");
+        dictionary.put("LXXXI", "81");
+        dictionary.put("LXXXII", "82");
+        dictionary.put("LXXXIII", "83");
+        dictionary.put("LXXXIV", "84");
+        dictionary.put("LXXXV", "85");
+        dictionary.put("LXXXVI", "86");
+        dictionary.put("LXXXVII", "87");
+        dictionary.put("LXXXVIII", "88");
+        dictionary.put("LXXXIX", "89");
+        dictionary.put("XC", "90");
+        dictionary.put("XCI", "91");
+        dictionary.put("XCII", "92");
+        dictionary.put("XCIII", "93");
+        dictionary.put("XCIV", "94");
+        dictionary.put("XCV", "95");
+        dictionary.put("XCVI", "96");
+        dictionary.put("XCVII", "97");
+        dictionary.put("XCVIII", "98");
+        dictionary.put("XCIX", "99");
+        dictionary.put("C", "100");
+
+        dictionary2.put(1, "I");
+        dictionary2.put(2, "II");
+        dictionary2.put(3, "III");
+        dictionary2.put(4, "IV");
+        dictionary2.put(5, "V");
+        dictionary2.put(6, "VI");
+        dictionary2.put(7, "VII");
+        dictionary2.put(8, "VIII");
+        dictionary2.put(9, "IX");
+        dictionary2.put(10, "X");
+        dictionary2.put(11, "XI");
+        dictionary2.put(12, "XII");
+        dictionary2.put(13, "XIII");
+        dictionary2.put(14, "XIV");
+        dictionary2.put(15, "XV");
+        dictionary2.put(16, "XVI");
+        dictionary2.put(17, "XVII");
+        dictionary2.put(18, "XVIII");
+        dictionary2.put(19, "XIX");
+        dictionary2.put(20, "XX");
+        dictionary2.put(21, "XXI");
+        dictionary2.put(22, "XXII");
+        dictionary2.put(23, "XXIII");
+        dictionary2.put(24, "XXIV");
+        dictionary2.put(25, "XXV");
+        dictionary2.put(26, "XXVI");
+        dictionary2.put(27, "XXVII");
+        dictionary2.put(28, "XXVIII");
+        dictionary2.put(29, "XXIX");
+        dictionary2.put(30, "XXX");
+        dictionary2.put(31, "XXXI");
+        dictionary2.put(32, "XXXII");
+        dictionary2.put(33, "XXXIII");
+        dictionary2.put(34, "XXXIV");
+        dictionary2.put(35, "XXXV");
+        dictionary2.put(36, "XXXVI");
+        dictionary2.put(37, "XXXVII");
+        dictionary2.put(38, "XXXVIII");
+        dictionary2.put(39, "XXXIX");
+        dictionary2.put(40, "XL");
+        dictionary2.put(41, "XLI");
+        dictionary2.put(42, "XLII");
+        dictionary2.put(43, "XLIII");
+        dictionary2.put(44, "XLIV");
+        dictionary2.put(45, "XLV");
+        dictionary2.put(46, "XLVI");
+        dictionary2.put(47, "XLVII");
+        dictionary2.put(48, "XLVIII");
+        dictionary2.put(49, "XLIX");
+        dictionary2.put(50, "L");
+        dictionary2.put(51, "LI");
+        dictionary2.put(52, "LII");
+        dictionary2.put(53, "LIII");
+        dictionary2.put(54, "LIV");
+        dictionary2.put(55, "LV");
+        dictionary2.put(56, "LVI");
+        dictionary2.put(57, "LVII");
+        dictionary2.put(58, "LVIII");
+        dictionary2.put(59, "LIX");
+        dictionary2.put(60, "LX");
+        dictionary2.put(61, "LXI");
+        dictionary2.put(62, "LXII");
+        dictionary2.put(63, "LXIII");
+        dictionary2.put(64, "LXIV");
+        dictionary2.put(65, "LXV");
+        dictionary2.put(66, "LXVI");
+        dictionary2.put(67, "LXVII");
+        dictionary2.put(68, "LXVIII");
+        dictionary2.put(69, "LXIX");
+        dictionary2.put(70, "LXX");
+        dictionary2.put(71, "LXXI");
+        dictionary2.put(72, "LXXII");
+        dictionary2.put(73, "LXXIII");
+        dictionary2.put(74, "LXXIV");
+        dictionary2.put(75, "LXXV");
+        dictionary2.put(76, "LXXVI");
+        dictionary2.put(77, "LXXVII");
+        dictionary2.put(78, "LXXVIII");
+        dictionary2.put(79, "LXXIX");
+        dictionary2.put(80, "LXXX");
+        dictionary2.put(81, "LXXXI");
+        dictionary2.put(82, "LXXXII");
+        dictionary2.put(83, "LXXXIII");
+        dictionary2.put(84, "LXXXIV");
+        dictionary2.put(85, "LXXXV");
+        dictionary2.put(86, "LXXXVI");
+        dictionary2.put(87, "LXXXVII");
+        dictionary2.put(88, "LXXXVIII");
+        dictionary2.put(89, "LXXXIX");
+        dictionary2.put(90, "XC");
+        dictionary2.put(91, "XCI");
+        dictionary2.put(92, "XCII");
+        dictionary2.put(93, "XCIII");
+        dictionary2.put(94, "XCIV");
+        dictionary2.put(95, "XCV");
+        dictionary2.put(96, "XCVI");
+        dictionary2.put(97, "XCVII");
+        dictionary2.put(98, "XCVIII");
+        dictionary2.put(99, "XCIX");
+        dictionary2.put(100, "C");
+
 
         a = dictionary.get(a);
         b = dictionary.get(b);
@@ -26,22 +221,26 @@ public class Rom {
             //Сложение
             arifmetic ar = new arifmetic();
             res = ar.slogenie(Integer.parseInt(a),Integer.parseInt(b));
+            _res = dictionary2.get(res);
         }
         else if (deistvie.equals("-")){
             //Вычитание
             arifmetic ar = new arifmetic();
             res = ar.raznost(Integer.parseInt(a),Integer.parseInt(b));
+            _res = dictionary2.get(res);
         }
         else if (deistvie.equals("*")){
             //Умножение
             arifmetic ar = new arifmetic();
             res = ar.ymnozhenie(Integer.parseInt(a),Integer.parseInt(b));
+            _res = dictionary2.get(res);
         }
         else {
             //Деление
             arifmetic ar = new arifmetic();
             res = ar.delenie(Integer.parseInt(a),Integer.parseInt(b));
+            _res = dictionary2.get(res);
         }
-        return res;
+        return _res;
     }
 }
